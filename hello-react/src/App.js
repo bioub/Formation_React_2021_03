@@ -2,6 +2,8 @@
 // import React from "react";
 import Clock from './Clock';
 import Counter from './Counter';
+import ExHelloWorld from './ExHelloWorld';
+import ExMultiStateButton from './ExMultiStateButton';
 import Hello from './Hello';
 
 function App() {
@@ -17,6 +19,9 @@ function App() {
       <Clock />
       <h2>Counter (Events)</h2>
       <Counter />
+      <h2>Exercices</h2>
+      <ExHelloWorld />
+      <ExMultiStateButton values={['Rouge', 'Orange', 'Bleu']} />
     </div>
   );
 }
