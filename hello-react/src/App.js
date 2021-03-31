@@ -1,6 +1,7 @@
 // optionnel depuis React 17
 // import React from "react";
 import Clock from './Clock';
+import Counter from './Counter';
 import Hello from './Hello';
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
       <Hello name={name} />
       <h2>Clock (State, Lifecycle)</h2>
       <Clock />
+      <h2>Counter (Events)</h2>
+      <Counter />
     </div>
   );
 }
