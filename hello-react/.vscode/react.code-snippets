@@ -18,7 +18,8 @@
       "  );",
       "}",
       "",
-      "export default $TM_FILENAME_BASE;"
+      "export default $TM_FILENAME_BASE;",
+      ""
 		],
 		"description": "Create function component"
 	}

@@ -1,5 +1,6 @@
 // optionnel depuis React 17
 // import React from "react";
+import Clock from './Clock';
 import Hello from './Hello';
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
       {/* React.createElement(Hello, {name: 'Romain', age: 35, isTrainer: true}) */}
       <Hello name={name} />
       <h2>Clock (State, Lifecycle)</h2>
-      
+      <Clock />
     </div>
   );
 }
