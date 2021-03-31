@@ -18,7 +18,12 @@ class Clock extends Component {
     };
     setInterval(() => {
       // Do not mutate state directly. Use setState()
-      this.state.now = new Date();
+      // this.state.now = new Date();
+
+      // appeler setState conduira React à rappeler render
+      this.setState({
+        now: new Date(),
+      });
     }, 1000);
   }
   render() {
