@@ -3,7 +3,7 @@
 
 import React from "react";
 
-function Hello() {
+function Hello({ name = '', age = 0, isTrainer = false }) {
   // const divEl = document.createElement('div');
   // divEl.className = 'Hello';
   // divEl.innerText = 'Hello World';
@@ -23,7 +23,7 @@ function Hello() {
 
   return (
     <div className="Hello">
-      Hello <b>World</b>
+      Hello my name is <b>{name}</b>, I'm {age}
     </div>
   );
 }
