@@ -16,7 +16,10 @@ class Clock extends Component {
     this.state = {
       now: new Date(),
     };
-    setInterval(() => {
+    // addEventListener
+    // new WebSocket
+    // new Worker
+    this._interval = setInterval(() => {
       // Do not mutate state directly. Use setState()
       // this.state.now = new Date();
 
@@ -25,6 +28,12 @@ class Clock extends Component {
         now: new Date(),
       });
     }, 1000);
+  }
+  componentWillUnmount() {
+    // removeEventListener
+    // ws.close()
+    // worker.terminate()
+    clearInterval(this._interval);
   }
   render() {
     // dans une classe les props sont accessible via this.props

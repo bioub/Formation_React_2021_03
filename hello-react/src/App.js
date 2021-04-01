@@ -1,6 +1,7 @@
 // optionnel depuis React 17
 // import React from "react";
 import Clock from './Clock';
+import ClockWithControls from './ClockWithControls';
 import Counter from './Counter';
 import ExHelloWorld from './ExHelloWorld';
 import ExMultiStateButton from './ExMultiStateButton';
@@ -26,6 +27,8 @@ function App() {
       <ExMultiStateButton values={['Rouge', 'Orange', 'Bleu']} />
       <h2>Select (conditionnal JSX and List)</h2>
       <Select items={['Rouge', 'Orange', 'Bleu']} />
+      <h2>ClockWithControls (Composition and Lifecycle)</h2>
+      <ClockWithControls />
     </div>
   );
 }
