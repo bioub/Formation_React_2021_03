@@ -14,10 +14,11 @@ function App() {
       <h2>Hello (Component, JSX, props)</h2>
       <Hello name="Romain" age={35} isTrainer />
       {/* React.createElement(Hello, {name: 'Romain', age: 35, isTrainer: true}) */}
-      <Hello name={name} />
+      <Hello name={name}  />
       <h2>Clock (State, Lifecycle)</h2>
-      <Clock />
+      <Clock  />
       <h2>Counter (Events)</h2>
+      <Counter />
       <Counter />
       <h2>Exercices</h2>
       <ExHelloWorld />
