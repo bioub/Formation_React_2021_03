@@ -5,6 +5,7 @@ import Counter from './Counter';
 import ExHelloWorld from './ExHelloWorld';
 import ExMultiStateButton from './ExMultiStateButton';
 import Hello from './Hello';
+import Select from './Select';
 
 function App() {
   const name = 'Romain';
@@ -23,6 +24,8 @@ function App() {
       <h2>Exercices</h2>
       <ExHelloWorld />
       <ExMultiStateButton values={['Rouge', 'Orange', 'Bleu']} />
+      <h2>Select (conditionnal JSX and List)</h2>
+      <Select items={['Rouge', 'Orange', 'Bleu']} />
     </div>
   );
 }
