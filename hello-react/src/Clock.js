@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { format as formatDate } from 'date-fns'
 
 // function Clock() {
 //   let now = new Date();
@@ -16,9 +17,9 @@ class Clock extends Component {
     this.state = {
       now: new Date(),
     };
-    // addEventListener
-    // new WebSocket
-    // new Worker
+  }
+  startInterval() {
+    const { delay = 1000 } = this.props;
     this._interval = setInterval(() => {
       // Do not mutate state directly. Use setState()
       // this.state.now = new Date();
@@ -27,7 +28,21 @@ class Clock extends Component {
       this.setState({
         now: new Date(),
       });
-    }, 1000);
+    }, delay);
+  }
+  componentDidMount() {
+    // addEventListener
+    // new WebSocket
+    // new Worker
+    this.startInterval();
+  }
+  componentDidUpdate(previousProps) {
+    // ne pas redémarrer l'interval si le delay n'a pas changé
+    if (previousProps.delay === this.props.delay) {
+      return;
+    }
+    clearInterval(this._interval);
+    this.startInterval();
   }
   componentWillUnmount() {
     // removeEventListener
@@ -39,9 +54,10 @@ class Clock extends Component {
     // dans une classe les props sont accessible via this.props
     // const { name = '', age = 0, isTrainer = false } = this.props;
     const { now } = this.state;
+    const { format = 'HH:mm:ss' } = this.props;
     return (
       <div className="Clock">
-        {now.toLocaleTimeString()}
+        {formatDate(now, format)}
       </div>
     );
   }
