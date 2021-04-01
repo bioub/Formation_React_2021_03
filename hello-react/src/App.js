@@ -6,7 +6,9 @@ import Counter from './Counter';
 import ExHelloWorld from './ExHelloWorld';
 import ExMultiStateButton from './ExMultiStateButton';
 import Hello from './Hello';
+import Parent from './lifting-state-up/Parent';
 import Select from './Select';
+import UserForm from './UserForm';
 
 function App() {
   const name = 'Romain';
@@ -29,6 +31,10 @@ function App() {
       <Select items={['Rouge', 'Orange', 'Bleu']} />
       <h2>ClockWithControls (Composition and Lifecycle)</h2>
       <ClockWithControls />
+      <h2>Form</h2>
+      <UserForm />
+      <h2>Parent (Lifting state up)</h2>
+      <Parent />
     </div>
   );
 }
