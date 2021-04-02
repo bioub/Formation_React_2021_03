@@ -1,14 +1,15 @@
 // optionnel depuis React 17
 // import React from "react";
-import Clock from './Clock';
-import ClockWithControls from './ClockWithControls';
-import Counter from './Counter';
-import ExHelloWorld from './ExHelloWorld';
-import ExMultiStateButton from './ExMultiStateButton';
-import Hello from './Hello';
-import Parent from './lifting-state-up/Parent';
-import Select from './Select';
-import UserForm from './UserForm';
+import Clock from './theorie/Clock';
+import ClockWithControls from './theorie/ClockWithControls';
+import Counter from './theorie/Counter';
+import ExHelloWorld from './theorie/ExHelloWorld';
+import ExMultiStateButton from './theorie/ExMultiStateButton';
+import Hello from './theorie/Hello';
+import Parent from './theorie/lifting-state-up/Parent';
+import Select from './theorie/Select';
+import UserForm from './theorie/UserForm';
+import Todos from './todos/Todos';
 
 function App() {
   const name = 'Romain';
@@ -35,6 +36,8 @@ function App() {
       <UserForm />
       <h2>Parent (Lifting state up)</h2>
       <Parent />
+      <h2>Exercice Todos</h2>
+      <Todos />
     </div>
   );
 }
