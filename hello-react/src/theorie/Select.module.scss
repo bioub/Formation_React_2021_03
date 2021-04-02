@@ -1,0 +1,41 @@
+$padding: 5px;
+$borderColor: black;
+
+.host {
+  user-select: none;
+}
+
+.selected {
+  border: 1px solid $borderColor;
+  padding: $padding;
+  cursor: pointer;
+}
+
+.items {
+  border: 1px solid $borderColor;
+  cursor: pointer;
+}
+
+/* .item {
+  padding: 5px;
+}
+
+.item.active {
+  background-color: lightskyblue;
+}
+
+.item:hover {
+  background-color: lightgray;
+} */
+
+.item {
+  padding: $padding;
+
+  &.active {
+    background-color: lightskyblue;
+  }
+
+  &:hover {
+    background-color: lightgray;
+  }
+}

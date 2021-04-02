@@ -1,4 +1,6 @@
+import styles from './Select.module.scss';
 import { Component, createRef } from "react";
+import classNames from 'classnames';
 
 // class Select extends Component {
 //   state = {
@@ -74,17 +76,17 @@ class Select extends Component {
     const { items = [] } = this.props;
 
     const itemsJsx = items.map((item) => (
-      <div className="item" key={item} onClick={() => this.handleSelected(item)}>
+      <div className={classNames(styles.item, {[styles.active]: item === selected})} key={item} onClick={() => this.handleSelected(item)}>
         {item}
       </div>
     ));
 
     return (
-      <div className="Select" ref={this.hostRef}>
-        <div className="selected" onClick={this.handleToggleOpen}>
+      <div className={styles.host} ref={this.hostRef}>
+        <div className={styles.selected} onClick={this.handleToggleOpen}>
           {selected}
         </div>
-        {open && <div className="items">{itemsJsx}</div>}
+        {open && <div className={styles.items}>{itemsJsx}</div>}
       </div>
     );
   }
