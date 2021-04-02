@@ -1,69 +1,11 @@
-import { useState } from "react";
-import TodoForm from "../todos/TodoForm";
-import TodoList from "../todos/TodoList";
-
-// class Todos extends Component {
-//   state = {
-//     todos: [
-//       {id: 1, title: 'Lait', completed: false},
-//       {id: 2, title: 'Pain', completed: true},
-//       {id: 3, title: 'Beurre', completed: false}
-//     ],
-//     newTodo: 'Farine',
-//   };
-
-//   handleValueChange = (value) => {
-//     this.setState({
-//       newTodo: value,
-//     });
-//   }
-
-//   handleAdd = (value) => {
-//     const { todos } = this.state;
-//     this.setState({
-//       todos: [...todos, {id: Math.random(), title: value, completed: false}],
-//       newTodo: '',
-//     });
-//   }
-
-//   render() {
-//     const { todos, newTodo } = this.state;
-//     return <div className="Todos">
-//       <TodoForm value={newTodo} onValueChange={this.handleValueChange} onAdd={this.handleAdd} />
-//       <TodoList items={todos} />
-//     </div>
-//   }
-// }
+import TodoFormContainer from "../containers/TodoFormContainer";
+import TodoListContainer from "../containers/TodoListContainer";
 
 function Todos() {
-  const [todos, setTodos] = useState([
-    { id: 1, title: "Lait", completed: false },
-    { id: 2, title: "Pain", completed: true },
-    { id: 3, title: "Beurre", completed: false },
-  ]); // récupère 1 clé du state
-  const [newTodo, setNewTodo] = useState("Farine"); // récupère 1 clé du state
-
-  function handleValueChange(value) {
-    setNewTodo(value);
-  }
-
-  function handleAdd(value) {
-    setTodos([...todos, {id: Math.random(), title: value, completed: false}]);
-    setNewTodo('');
-  }
-
-  function handleDelete(item) {
-    setTodos(todos.filter((todo) => todo.id !== item.id));
-  }
-
   return (
     <div className="Todos">
-      <TodoForm
-        value={newTodo}
-        onValueChange={handleValueChange}
-        onAdd={handleAdd}
-      />
-      <TodoList items={todos} onDelete={handleDelete} />
+      <TodoFormContainer />
+      <TodoListContainer />
     </div>
   );
 }

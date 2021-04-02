@@ -3,6 +3,26 @@ import { combineReducers } from "redux";
 const initialState = {
   age: 35,
   prenom: "Romain",
+  todos: {
+    newTodo: "Achet",
+    items: [
+      {
+        id: 1,
+        title: "Acheter du pain",
+        completed: false,
+      },
+      {
+        id: 2,
+        title: "Aller au sport",
+        completed: true,
+      },
+      {
+        id: 3,
+        title: "Utiliser Redux",
+        completed: false,
+      },
+    ],
+  },
 };
 
 function ageReducer(state = initialState.age, action) {
@@ -25,10 +45,26 @@ function prenomReducer(state = initialState.prenom, action) {
   }
 }
 
+function todosReducer(state = initialState.todos, action) {
+  switch (action.type) {
+    case "CHANGE_TODO":
+      return { ...state, newTodo: action.payload };
+    case "ADD_TODO":
+      return { ...state, newTodo: "", items: [...state.items, action.payload] };
+    case "DELETE_TODO":
+      return {
+        ...state,
+        items: state.items.filter((it) => it.id !== action.payload.id),
+      };
+    default:
+      return state;
+  }
+}
+
 const reducer = combineReducers({
   age: ageReducer,
   prenom: prenomReducer,
-  // todos: todosReducer,
+  todos: todosReducer,
   // todos: combineReducers({
   //   items: todosItemsReducer,
   //   newTodo: todosNewTodoReducer,
@@ -61,8 +97,8 @@ const reducer = combineReducers({
 //       return { ...state, age: state.age - 1 };
 //     case 'UPDATE_PRENOM':
 //       return { ...state, prenom: action.payload };
-      // case 'ADD_TODO':
-      //   return { ...state, todos: {...state.todos, items: [...state.todos.items, {}]} };
+// case 'ADD_TODO':
+//   return { ...state, todos: {...state.todos, items: [...state.todos.items, {}]} };
 //     default:
 //       return state;
 //   }
