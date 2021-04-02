@@ -1,6 +1,6 @@
 import { useState } from "react";
-import TodoForm from "./TodoForm";
-import TodoList from "./TodoList";
+import TodoForm from "../todos/TodoForm";
+import TodoList from "../todos/TodoList";
 
 // class Todos extends Component {
 //   state = {
