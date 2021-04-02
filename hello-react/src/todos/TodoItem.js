@@ -1,7 +1,7 @@
-function TodoItem({item = {}}) {
+function TodoItem({item = {}, onDelete }) {
   return (
     <div className="TodoItem">
-      {item.title}
+      {item.title} <button onClick={() => onDelete(item)}>-</button>
     </div>
   );
 }

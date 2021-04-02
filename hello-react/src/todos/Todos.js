@@ -52,6 +52,10 @@ function Todos() {
     setNewTodo('');
   }
 
+  function handleDelete(item) {
+    setTodos(todos.filter((todo) => todo.id !== item.id));
+  }
+
   return (
     <div className="Todos">
       <TodoForm
@@ -59,7 +63,7 @@ function Todos() {
         onValueChange={handleValueChange}
         onAdd={handleAdd}
       />
-      <TodoList items={todos} />
+      <TodoList items={todos} onDelete={handleDelete} />
     </div>
   );
 }
